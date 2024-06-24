@@ -7,6 +7,7 @@ import CounterApp from './components/CounterApp'
 import EnableDisableButton from './components/EnableDisableButton'
 import TwoWayBinding from './components/TowwayaData'
 import ParentComponent from './components/ParentComponent'
+import SumComponent from './components/SumComponent'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
      <EnableDisableButton/>
      <TwoWayBinding/>
     <ParentComponent/>
+    <SumComponent/>
    </div>
   )
 }
