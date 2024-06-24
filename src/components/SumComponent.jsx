@@ -22,18 +22,24 @@ function SumComponent() {
     <div>
       <h1>Sum of Two Numbers</h1>
       <div>
-        <input 
-          type="number" 
-          value={num1} 
-          onChange={handleNum1Change} 
-          placeholder="Enter first number" 
-        />
-        <input 
-          type="number" 
-          value={num2} 
-          onChange={handleNum2Change} 
-          placeholder="Enter second number" 
-        />
+        <label>
+          Number 1:
+          <input 
+            type="text" 
+            value={num1} 
+            onChange={handleNum1Change} 
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Number 2:
+          <input 
+            type="text" 
+            value={num2} 
+            onChange={handleNum2Change} 
+          />
+        </label>
       </div>
       <button onClick={calculateSum}>Calculate Sum</button>
       {sum !== null && <p>Sum: {sum}</p>}
