@@ -1,35 +1,44 @@
 import React, { useState } from 'react';
 
-function EnableDisableButton() {
-  const [inputValue, setInputValue] = useState('');
-  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-  const [value, setvalue] = useState('')
+function TextInputWithToggle() {
+  const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
+  const [text, setText] = useState('');
 
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
-    setIsButtonEnabled(value.length > 0); // Enable the button if input is not empty
+  const toggleSubmitButton = () => {
+    setIsSubmitEnabled(!isSubmitEnabled);
   };
-  function changehandler(){
-    console.log("hit button")
-    setvalue(inputValue)
-  }
+
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    alert(`Submitted Text: ${text}`);
+    setText('');
+  };
 
   return (
     <div>
-      <h1>Enable/Disable Button Example</h1>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        placeholder="Type something to enable the button..."
+      <h1>Submit Input Text</h1>
+      <input 
+        type="text" 
+        value={text} 
+        onChange={handleChange} 
+        placeholder="Type something..."
       />
-      <button disabled={!isButtonEnabled} onClick={changehandler}>
-        {isButtonEnabled ? 'Enabled' : 'Disabled'}
+      <br /><br />
+      <button 
+        onClick={handleSubmit} 
+        disabled={!isSubmitEnabled}
+      >
+        Submit
       </button>
-      <p>{value}</p>
+      <br /><br />
+      <button onClick={toggleSubmitButton}>
+        {isSubmitEnabled ? 'Disable Submit Button' : 'Enable Submit Button'}
+      </button>
     </div>
   );
 }
 
-export default EnableDisableButton;
+export default TextInputWithToggle;
