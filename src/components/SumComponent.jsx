@@ -24,7 +24,7 @@ function SumComponent() {
         <label>
           Number 1:
           <input 
-            type="text" 
+            type="number" 
             value={num1} 
             onChange={handleNum1Change} 
           />
@@ -34,7 +34,7 @@ function SumComponent() {
         <label>
           Number 2:
           <input 
-            type="text" 
+            type="number" 
             value={num2} 
             onChange={handleNum2Change} 
           />
